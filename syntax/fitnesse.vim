@@ -9,6 +9,8 @@ endif
 
 syn sync minlines=200
 
+runtime! syntax/xml.vim
+
 syn region fitnesseCollapsibleSection matchgroup=fitnesseSectionMarker start=/!\*\+.*/ end=/\*\+!.*/ contains=TOP transparent fold
 syn match fitnesseBracesAndBrackets "|\|{\|}\|\[\|\]"
 syn match fitnesseBang /!/ contains=fitnesseCollapsibleSection
