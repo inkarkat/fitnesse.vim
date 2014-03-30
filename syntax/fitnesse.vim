@@ -9,7 +9,17 @@ endif
 
 syn sync minlines=200
 
-runtime! syntax/xml.vim
+syn include @xml syntax/xml.vim
+syn region   fitnesseXmlRegion
+\  start=+<\z([^ /!?<>"']\+\)+
+\  skip=+<!--\_.\{-}-->+
+\  end=+</\z1\_\s\{-}>+
+\  matchgroup=xmlEndTag end=+/>+
+\  fold
+\  contains=xmlTag,xmlEndTag,xmlCdata,fitnesseXmlRegion,xmlComment,xmlEntity,xmlProcessing,@xmlRegionHook,@Spell
+\  keepend
+\  extend
+
 
 syn region fitnesseCollapsibleSection matchgroup=fitnesseSectionMarker start=/!\*\+.*/ end=/\*\+!.*/ contains=TOP transparent fold
 syn match fitnesseBracesAndBrackets "|\|{\|}\|\[\|\]"
