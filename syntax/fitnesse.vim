@@ -41,7 +41,8 @@ syn region fitnesseHeading start=/!\d/ end=/\n/
 syn match fitnesseWidget /!\w\+[\[{(]/me=e-1,he=e-1
 syn match fitnesseKeyword /!define /
 syn match fitnesseKeyword /!include /
-syn keyword fitnesseKeyword  scenario script Query: start check reject show Comment comment !see !include !See null
+syn match fitnesseKeyword /![sS]ee /
+syn keyword fitnesseKeyword  scenario script Query: start check reject show Comment comment null
 syn match fitnesseScenarioVariable /@\w\+/
 syn match fitnesseWikiWord /\<[A-Z][a-z]\+[A-Za-z]*[A-Z]\+[A-Za-z]*\>/
 
