@@ -22,15 +22,14 @@ syn region   fitnesseXmlRegion
 
 
 syn region fitnesseCollapsibleSection matchgroup=fitnesseSectionMarker start=/!\*\+.*/ end=/\*\+!.*/ contains=TOP transparent fold
-syn match fitnesseBracesAndBrackets "|\|{\|}\|\[\|\]"
 syn match fitnesseBang /!/ contains=fitnesseCollapsibleSection
 syn match fitnesseLiteralText /!-.\{-}-!/
 syn match fitnesseOpenCell /|[^|]\+\n/hs=s+1
 
 syn region fitnesseCellContents start=+|+hs=s+1 end=+|+he=e-1 oneline contains=TOP
-syn region fitnesseStyledText start=+\[+hs=s+1 end=+\]+he=e-1 oneline contains=TOP
-syn region fitnesseStyledText start=+{+hs=s+1 end=+}+he=e-1 oneline contains=TOP
-syn region fitnesseStyledText start=+(+hs=s+1 end=+)+he=e-1 oneline contains=TOP
+syn region fitnesseStyledText matchgroup=fitnesseBracesAndBrackets start=+\[+ end=+\]+ oneline contains=TOP
+syn region fitnesseStyledText matchgroup=fitnesseBracesAndBrackets start=+{+ end=+}+ oneline contains=TOP
+syn region fitnesseStyledText matchgroup=fitnesseBracesAndBrackets start=+(+ end=+)+ oneline contains=TOP
 syn region fitnesseComment start=/\%(^\|\s\)#/ end=/\n/
 syn match fitnesseString /"[^"]\+"/ contains=Identifier
 syn match fitnesseString /'[^']\+'/ contains=Identifier
