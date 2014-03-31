@@ -31,7 +31,7 @@ syn region fitnesseCellContents start=+|+hs=s+1 end=+|+he=e-1 oneline contains=T
 syn region fitnesseStyledText start=+\[+hs=s+1 end=+\]+he=e-1 oneline contains=TOP
 syn region fitnesseStyledText start=+{+hs=s+1 end=+}+he=e-1 oneline contains=TOP
 syn region fitnesseStyledText start=+(+hs=s+1 end=+)+he=e-1 oneline contains=TOP
-syn region fitnesseComment start=/#/ end=/\n/
+syn region fitnesseComment start=/\%(^\|\s\)#/ end=/\n/
 syn match fitnesseString /"[^"]\+"/ contains=Identifier
 syn match fitnesseString /'[^']\+'/ contains=Identifier
 syn match fitnesseSymbol /$\w*/
