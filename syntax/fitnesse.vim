@@ -16,7 +16,7 @@ syn region   fitnesseXmlRegion
 \  end=+</\z1\_\s\{-}>+
 \  matchgroup=xmlEndTag end=+/>+
 \  fold
-\  contains=xmlTag,xmlEndTag,xmlCdata,fitnesseXmlRegion,xmlComment,xmlEntity,xmlProcessing,@xmlRegionHook,@Spell
+\  contains=xmlTag,xmlEndTag,xmlCdata,fitnesseXmlRegion,xmlComment,xmlEntity,xmlProcessing,@xmlRegionHook,@Spell,fitnesseExtractVariable
 \  keepend
 \  extend
 
